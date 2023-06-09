@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <form action="" method="POST" class="w-50 m-auto mt-4">
+    {% csrf_token %}
+    {{form}}
+        <input type="submit" class="btn btn-warning mt-3" value="Kayıt Ol">
+    </form>
+</div>
+{% endblock content %}

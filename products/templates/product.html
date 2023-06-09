@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<h1>Ürün Sayfası</h1>
+
+{% for i in product %}
+    <div class="card">
+    {% if product.productImage %}
+        <img src="{{product.productImage.url}}" alt="" />
+    {% else %}
+        <img src="{% static 'avatar.jpg' %}" alt="" />
+    {% endif %}
+    <div class="card-body">
+        <h5 class="card-title">{{i.productName}}</h5>
+        <p class="card-text">{{i.productInfo}}</p>
+        <small>{{i.productPrice}}</small>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    </div>
+{% endfor %}
+{% endblock content %}
